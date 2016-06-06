@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --inline --progress --watch"
+  },
+  "dependencies": {
+    "draft-js": "0.7.0",
+    "react": "15.1.0",
+    "react-dom": "15.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.9.1",
+    "babel-loader": "6.2.4",
+    "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1"
+  }
+}
