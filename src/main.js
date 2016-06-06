@@ -97,16 +97,27 @@ ReactDOM.render(
 )
 
 class Media extends React.Component {
+  render() {
+    const entity = Entity.get(this.props.block.getEntityAt(0));
+    const {src} = entity.getData();
+    const type = entity.getType();
+    if (type === 'image') {
+      return (
+        <Image src={src} {...this.props}/>
+      )
+    }
+  }
+}
+
+class Image extends React.Component {
   remove() {
     this.props.blockProps.removeImage(this.props.block.getKey())
   }
 
   render() {
-    const entity = Entity.get(this.props.block.getEntityAt(0));
-    const {src} = entity.getData();
     return (
       <div>
-        <img src={src}/>
+        <img src={this.props.src}/>
         <button onClick={this.remove.bind(this)}>remove</button>
       </div>
     )
